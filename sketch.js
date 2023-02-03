@@ -1,7 +1,17 @@
+const flock = [];
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(900, 900);
+ 
+  for (let i = 0; i < 100; i++) {
+    flock.push(new Boid());
+  }
 }
 
+
 function draw() {
-  background(220);
+  background(51);
+  for(let boid of flock) {
+    boid.show();
+    boid.update();
+  }
 }
